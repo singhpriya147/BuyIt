@@ -9,7 +9,18 @@ const Product = ({SingleProduct}) => {
           src={SingleProduct.image.url}
           alt={SingleProduct.productTitle}
         ></Card.Img>
-        {SingleProduct.productTitle}
+        <Card.Title>{SingleProduct.productTitle}</Card.Title>
+        <Card.Subtitle>
+          {SingleProduct.prices.map((price, index) => (
+            <div key={index}>
+              <p>
+                Regular Price: {price.regularPrice.minPrice}
+                {price.regularPrice.maxPrice}$
+              </p>
+             
+            </div>
+          ))}
+        </Card.Subtitle>
       </Card>
     </div>
   );
