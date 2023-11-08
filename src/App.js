@@ -2,17 +2,16 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Cart from './components/Cart'
+import Home from './components/Home'
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <div className='app'>
         <Routes>
-          <Route path='/' exact>
-            <Home />
-          </Route>
-          <Route path='/cart' exact>
-            <Cart/>
+          <Route path='/' exact element={<Home />}></Route>
+          <Route path='/cart' exact element={<Cart />}>
+          
           </Route>
         </Routes>
       </div>
