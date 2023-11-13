@@ -1,12 +1,7 @@
 export const apiReducer = (state, action) => {
   switch (action.type) {
   
-    case 'FETCH_PRODUCTS':
-      return {
-        ...state,
-        products: action.payload,
-      };
-
+  
     case 'FETCH_SINGLE_PRODUCTS':
       return {
         ...state,
@@ -15,10 +10,10 @@ export const apiReducer = (state, action) => {
         error: null,
       };
     case 'FETCH_ERROR':
-      return {
-        ...state,
-        products: action.payload,
-      };
+     return {
+       ...state,
+       error: action.payload,
+     };
     default:
       return state;
   }

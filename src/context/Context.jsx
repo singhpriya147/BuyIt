@@ -8,10 +8,12 @@ import { cartReducer } from '../reducer/cartReducer';
 export const CartContext = createContext();
 
 
+
 export default function  ContextProvider({children}){
 
   
 const [state, dispatch] = useReducer(cartReducer, {
+  
   products: [],
   cart: [],
 });
@@ -33,7 +35,6 @@ const [state, dispatch] = useReducer(cartReducer, {
    },[]);
    
    
-
 
 
 

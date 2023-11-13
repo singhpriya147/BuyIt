@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiReducer } from '../reducer/apiReducer'
-
+import { Card } from 'react-bootstrap';
 const initialState = {
   loading: true,
   product: null,
@@ -40,8 +40,16 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
+      <Card>
+        <Card.Img
+          src={product.image}
+          alt={product.title}
+          style={{ width: '200px', height: '200px' }}
+        />
+        <Card.Title>{product.title}</Card.Title>
+        <Card.Subtitle>{product.description}</Card.Subtitle>
+      </Card>
+
       {/* Render other product details as needed */}
     </div>
   );
