@@ -1,4 +1,5 @@
 import { FaShoppingCart } from 'react-icons/fa';
+import React, { useContext } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import {
   Badge,
@@ -7,21 +8,33 @@ import {
   Dropdown,
   FormControl,
   Nav,
+  NavDropdown,
   Navbar,
 } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-import { CartState } from '../context/Context';
-// import './styles.css';
+
+
+import './style.css';
+import { CartContext } from '../context/Context';
+
+
+
+
 
 const Header = () => {
-  // const {
-  //   state: { cart },
-  //   dispatch,
-  //   productDispatch,
-  // } = CartState();
+
+
+   const {
+     state: { cart },dispatch
+     
+   } = useContext(CartContext);
 
   return (
-    <Navbar bg='dark' variant='dark' style={{ height: 80 }}>
+    <Navbar
+      bg='dark'
+      variant='dark'
+      style={{ height: 80, backgroundColor: 'red' }}
+    >
       <Container>
         <Navbar.Brand>
           <Link to='/'>Shopping Cart</Link>
@@ -29,7 +42,7 @@ const Header = () => {
         {useLocation().pathname.split('/')[1] !== 'cart' && (
           <Navbar.Text className='search'>
             <FormControl
-              style={{ width: 500 }}
+              style={{ minwidth: 500 }}
               type='search'
               placeholder='Search a product...'
               className='m-auto'
@@ -43,26 +56,36 @@ const Header = () => {
             />
           </Navbar.Text>
         )}
-        <Nav>
-          <Dropdown alignRight>
+        {/* <Nav>
+          <Dropdown alignCenter>
             <Dropdown.Toggle variant='success'>
               <FaShoppingCart color='white' fontSize='25px' />
-              <Badge>{10}</Badge>
+              <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
 
-            {/* <Dropdown.Menu style={{ minWidth: 370 }}>
+
+            <Dropdown.Menu style={{ minWidth: 370 }}>
               {cart.length > 0 ? (
                 <>
-                  {cart.map((prod) => (
-                    <span className='cartitem' key={prod.id}>
+                    {cart.map((prod) => (
+                    <span className='cartitem' key={prod.webID}>
                       <img
-                        src={prod.image}
+                        src={prod.image.url}
                         className='cartItemImg'
                         alt={prod.name}
                       />
                       <div className='cartItemDetail'>
-                        <span>{prod.name}</span>
-                        <span>₹ {prod.price.split('.')[0]}</span>
+                        <span>{prod.productTitle}</span>
+                        <span>
+                          {prod.prices.map((price, index) => (
+                            <div key={index}>
+                              <p>
+                                Regular Price: {price.regularPrice.minPrice}
+                                {price.regularPrice.maxPrice.split}$
+                              </p>
+                            </div>
+                          ))}
+                        </span>
                       </div>
                       <AiFillDelete
                         fontSize='20px'
@@ -85,9 +108,17 @@ const Header = () => {
               ) : (
                 <span style={{ padding: 10 }}>Cart is Empty!</span>
               )}
-            </Dropdown.Menu> */}
+            </Dropdown.Menu>
+
+
           </Dropdown>
-        </Nav>
+        </Nav> */}
+        <Link to='/Cart'>
+          <Button>
+            <FaShoppingCart color='black' fontSize='25px' />
+            <Badge>{cart.length}</Badge>
+          </Button>
+        </Link>
       </Container>
     </Navbar>
   );

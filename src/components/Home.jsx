@@ -10,12 +10,17 @@ const Home = () => {
   // access the context
   // const {jsonData}=useContext(CartContext)
   const {state}=useContext(CartContext)
+  
+  if (state.products.length === 0) {
+    return <div>Loading...</div>; // Or a loading indicator while data is being fetched
+  }
+
 console.log(state.products);
   return (
     <div className='home'>
 
       <div className='productContainer'>
-        {state.products.payload.products.map((product) => {
+        {state.products.map((product) => {
           return <Product SingleProduct={product}key={product.id}/>})
           
         }

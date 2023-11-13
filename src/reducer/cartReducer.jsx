@@ -1,0 +1,32 @@
+export const cartReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
+    case 'REMOVE_FROM_CART':
+      return {
+        ...state,
+        cart: state.cart.filter((c) => c.id !== action.payload.id),
+      };
+
+    case 'FETCH_PRODUCTS':
+      return {
+        ...state,
+        products: action.payload,
+      };
+
+    case 'FETCH_SINGLE_PRODUCTS':
+      return {
+        ...state,
+        loading: false,
+        product: action.payload,
+        error: null,
+      };
+    case 'FETCH_ERROR':
+      return {
+        ...state,
+        products: action.payload,
+      };
+    default:
+      return state;
+  }
+};
