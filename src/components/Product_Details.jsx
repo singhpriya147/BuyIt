@@ -48,6 +48,7 @@ const ProductDetails = () => {
         />
         <Card.Title>{product.title}</Card.Title>
         <Card.Subtitle>{product.description}</Card.Subtitle>
+        <Card.Subtitle>{product.rating}</Card.Subtitle>
       </Card>
 
       {/* Render other product details as needed */}
