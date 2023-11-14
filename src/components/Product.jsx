@@ -27,7 +27,7 @@ console.log(cart);
 
           {cart.some((p) => p.id === SingleProduct.id) ? (
             <Button
-              variant='danger'
+             
               onClick={() => {
                 dispatch({
                   type: 'REMOVE_FROM_CART',

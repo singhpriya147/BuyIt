@@ -5,7 +5,7 @@
   --primary:#2caa87;
   --secondary: #85beb5;
   --accent: #00ffb4;
-  --card: rgba(0, 0, 0, 0.03);
+  --card: #dcfdf8;
   --radius: 0.5rem;
 }
 body{
@@ -67,7 +67,7 @@ body{
 
 .productContainer {
   display: flex;
-  width: 78%;
+  width: 70%;
   padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -76,10 +76,15 @@ body{
 .products {
   width: 100%;
   margin: 10px;
-  background-color: red;
+  background-color:var(--card);
   border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.products Button{
+  background-color: var(--accent);
+}
 .summary {
   width: 30%;
 }
