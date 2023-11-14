@@ -4,8 +4,7 @@ import {Button} from 'react-bootstrap';
 import './style.css';
 import { CartContext } from '../context/Context';
 import { Link } from 'react-router-dom';
-
-
+import './style.css';
 
 const Product = ({SingleProduct}) => {
 
@@ -17,9 +16,9 @@ console.log(cart);
   return (
     <Link to={`/${id}`}>
       <div className='products'>
-        <Card>
+        <Card >
           <Card.Img
-            src={SingleProduct.image}
+            src={SingleProduct.images[0]}
             alt={SingleProduct.title}
             style={{ width: '200px', height: '200px' }}
           ></Card.Img>

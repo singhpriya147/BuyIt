@@ -14,7 +14,9 @@ export const cartReducer = (state, action) => {
         products: action.payload,
       };
 
-   
+    case 'SET_SELECTED_CATEGORY':
+      return { ...state, selectedCategory: action.payload };
+
     default:
       return state;
   }

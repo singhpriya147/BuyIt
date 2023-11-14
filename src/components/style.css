@@ -1,5 +1,16 @@
 /* header styles */
-
+:root {
+  --text: hsl(42, 92%, 5%);
+  --background: #dbf3ec;
+  --primary:#2caa87;
+  --secondary: #85beb5;
+  --accent: #00ffb4;
+  --card: rgba(0, 0, 0, 0.03);
+  --radius: 0.5rem;
+}
+body{
+  background-color: var(--background);
+}
 .header {
   display: flex;
   text-align: center;
@@ -63,8 +74,10 @@
 }
 
 .products {
-  width: 30%;
+  width: 100%;
   margin: 10px;
+  background-color: red;
+  border-radius: var(--radius);
 }
 
 .summary {

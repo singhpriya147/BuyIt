@@ -3,7 +3,7 @@ import Header from './Header'
 // import jasonData from  '../data/data.json'
 import { CartContext } from '../context/Context'
 import Product from './Product'
-
+import Filter from './Filter'
 import './style.css';
  
 const Home = () => {
@@ -16,18 +16,24 @@ const Home = () => {
   }
 
 console.log(state.products);
+
+
+
+const filteredProducts =
+  state.selectedCategory !== ''
+    ? state.products.filter(
+        (product) => product.category === state.selectedCategory
+      )
+    : state.products; 
   return (
     <div className='home'>
-
       <div className='productContainer'>
-        {state.products.map((product) => {
-          return <Product SingleProduct={product}key={product.id}/>})
-          
-        }
+        {state.products.products.map((product) => {
+          return <Product SingleProduct={product} key={product.id} />;
+        })}
       </div>
-      <div>
-     
-      </div>
+      <Filter />
+      <div></div>
     </div>
   );
 }

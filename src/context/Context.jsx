@@ -16,12 +16,13 @@ const [state, dispatch] = useReducer(cartReducer, {
   
   products: [],
   cart: [],
+  selectedCategory:'',
 });
    useEffect (()=>{
     const fetchData=async()=>{
       try {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        console.log((response.data));
+        const response = await axios.get('https://dummyjson.com/products');
+ 
         dispatch({
           type:'FETCH_PRODUCTS',
           payload:response.data

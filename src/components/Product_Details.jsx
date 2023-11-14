@@ -15,7 +15,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await response.json();
         console.log(data);
         dispatch({ type: 'FETCH_SINGLE_PRODUCTS', payload: data });
@@ -42,7 +42,7 @@ const ProductDetails = () => {
     <div>
       <Card>
         <Card.Img
-          src={product.image}
+          src={product.images[1]}
           alt={product.title}
           style={{ width: '200px', height: '200px' }}
         />
