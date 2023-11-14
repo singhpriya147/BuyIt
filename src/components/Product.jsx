@@ -26,7 +26,7 @@ console.log(cart);
           <Card.Subtitle>{SingleProduct.price}</Card.Subtitle>
 
           {cart.some((p) => p.id === SingleProduct.id) ? (
-            <Button
+            <button
              
               onClick={() => {
                 dispatch({
@@ -36,9 +36,9 @@ console.log(cart);
               }}
             >
               Remove from cart
-            </Button>
+            </button>
           ) : (
-            <Button
+            <button
               onClick={() => {
                 dispatch({
                   type: 'ADD_TO_CART',
@@ -47,7 +47,7 @@ console.log(cart);
               }}
             >
               Add to cart
-            </Button>
+            </button>
           )}
         </Card>
       </div>

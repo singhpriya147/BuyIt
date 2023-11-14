@@ -84,6 +84,9 @@ body{
 }
 .products Button{
   background-color: var(--accent);
+  padding: 1rem;
+  border-radius: var(--radius);
+ 
 }
 .summary {
   width: 30%;
