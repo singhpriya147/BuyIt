@@ -21,14 +21,14 @@ console.log(state.products);
 
 const filteredProducts =
   state.selectedCategory !== ''
-    ? state.products.filter(
+    ? state.products.products.filter(
         (product) => product.category === state.selectedCategory
       )
-    : state.products; 
+    : state.products.products; 
   return (
     <div className='home'>
       <div className='productContainer'>
-        {state.products.products.map((product) => {
+        {filteredProducts.map((product) => {
           return <Product SingleProduct={product} key={product.id} />;
         })}
       </div>
