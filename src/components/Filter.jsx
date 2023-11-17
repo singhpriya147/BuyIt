@@ -14,7 +14,7 @@ const Filter = () => {
     <div className='filter-container'>
       <h3>Filter by Category:</h3>
       <div className='category-options'>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
             value=''
@@ -23,7 +23,7 @@ const Filter = () => {
           />
           All Categories
         </label>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
             value='smartphones'
@@ -32,16 +32,16 @@ const Filter = () => {
           />
           smartphones
         </label>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
-            value='laptops'
-            checked={state.selectedCategory === 'laptops'}
-            onChange={() => handleCategoryChange('laptops')}
+            value='smartphones'
+            checked={state.selectedCategory === 'smartphones'}
+            onChange={() => handleCategoryChange('smartphones')}
           />
           laptops
         </label>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
             value='fragrances'
@@ -50,7 +50,7 @@ const Filter = () => {
           />
           fragrances
         </label>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
             value='skincare'
@@ -59,7 +59,7 @@ const Filter = () => {
           />
           skincare
         </label>
-        <label>
+        <label className='larger-radio'>
           <input
             type='radio'
             value='skincare'
@@ -67,6 +67,15 @@ const Filter = () => {
             onChange={() => handleCategoryChange('skincare')}
           />
           skincare
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='mens-shoes'
+            checked={state.selectedCategory === 'mens-shoes'}
+            onChange={() => handleCategoryChange('mens-shoes')}
+          />
+          Men
         </label>
       </div>
     </div>

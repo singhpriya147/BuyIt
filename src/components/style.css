@@ -91,7 +91,25 @@ body{
 .summary {
   width: 30%;
 }
+.category-options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  flex-direction: column;
+}
+label{
+  background-color: var(--secondary);
+  height: 50px;
+  display: inline;
+  width: 400px;
+  /* text-align:end; */
+  padding-left: 5rem;
+  font-size: 20px;
+}
+  .larger-radio input[type="radio"] {
+      transform: scale(1.5); /* Adjust the scale factor as needed */
+      margin-right: 5px;} /* Optional: Adjust spacing */
 /* Media Queries */
 @media (max-width: 771px) {
   .filters {

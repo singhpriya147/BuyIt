@@ -21,7 +21,9 @@ const [state, dispatch] = useReducer(cartReducer, {
    useEffect (()=>{
     const fetchData=async()=>{
       try {
-        const response = await axios.get('https://dummyjson.com/products');
+        const response = await axios.get(
+          'https://dummyjson.com/products?skip=5&limit=100'
+        );
  
         dispatch({
           type:'FETCH_PRODUCTS',
