@@ -74,7 +74,7 @@ const Header = () => {
             paddingBottom: '1rem',
           }}
         >
-          {useLocation().pathname.split('/')[1] !== 'cart' && (
+          {/* {useLocation().pathname.split('/')[1] !== 'cart' && (
             <FormControl
               style={{
                 width: '100%',
@@ -91,7 +91,23 @@ const Header = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               //  onBlur={handleSearch} 
             />
-          )}
+          )} */}
+          <FormControl
+            style={{
+              width: '100%',
+              maxWidth: '500px',
+              height: '40px',
+              marginRight: '15px',
+              padding: '5px',
+            }}
+            type='search'
+            placeholder='Search a product...'
+            // className='m-auto'
+            aria-label='Search'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            //  onBlur={handleSearch}
+          />
         </Navbar.Collapse>
       </Container>
     </Navbar>
