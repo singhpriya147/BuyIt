@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext ,useState,useEffect} from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Badge, Button, Container, FormControl, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
@@ -6,11 +6,35 @@ import './style.css';
 import { CartContext } from '../context/Context';
 
 const Header = () => {
+ 
+
   const {
     state: { cart },
-   
+    dispatch,
   } = useContext(CartContext);
+  const [searchTerm, setSearchTerm] = useState('');
+ 
 
+  useEffect(() => {
+    const fetchSearchResults = async () => {
+    
+      try {
+        const response = await fetch(
+          `https://dummyjson.com/products/search?q=${searchTerm}`
+        );
+        const data = await response.json();
+
+       
+        dispatch({ type: 'FETCH_SEARCH_RESULTS', payload: data.products });
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+      } 
+    };
+
+    if (searchTerm.trim() !== '') {
+      fetchSearchResults();
+    }
+  }, [searchTerm, dispatch]);
   return (
     <Navbar
       bg='dark'
@@ -23,8 +47,13 @@ const Header = () => {
           id='responsive-navbar-nav'
           style={{ display: 'flex', justifyContent: 'space-between' }}
         >
-          <Navbar.Brand style={{ marginRight: '15px',fontSize: "xxx-large",
-  fontWeight: '700'}}>
+          <Navbar.Brand
+            style={{
+              marginRight: '15px',
+              fontSize: 'xxx-large',
+              fontWeight: '700',
+            }}
+          >
             <Link to='/'>🛍️Swift Cart</Link>
           </Navbar.Brand>
 
@@ -58,6 +87,9 @@ const Header = () => {
               placeholder='Search a product...'
               // className='m-auto'
               aria-label='Search'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              //  onBlur={handleSearch} 
             />
           )}
         </Navbar.Collapse>
