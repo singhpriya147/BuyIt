@@ -12,7 +12,7 @@ export const CartContext = createContext();
 export default function  ContextProvider({children}){
 
   
-const [state, dispatch] = useReducer(cartReducer, {
+const [state, dispatchCart] = useReducer(cartReducer, {
   products: [],
   cart: [],
   selectedCategory: '',
@@ -25,7 +25,7 @@ const [state, dispatch] = useReducer(cartReducer, {
           'https://dummyjson.com/products?skip=0&limit=100'
         );
  
-        dispatch({
+        dispatchCart({
           type:'FETCH_PRODUCTS',
           payload:response.data
         });
@@ -48,7 +48,7 @@ const [state, dispatch] = useReducer(cartReducer, {
   return (
     // <CartContext.Provider value={{ jsonData}}>{children}
     // </CartContext.Provider>
-    <CartContext.Provider value={{state,dispatch}} >{children}</CartContext.Provider>
+    <CartContext.Provider value={{state,dispatchCart}} >{children}</CartContext.Provider>
   );
 }
 

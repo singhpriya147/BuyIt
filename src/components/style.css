@@ -82,7 +82,13 @@ body{
   align-items: center;
   justify-content: center;
 }
-.products Button{
+.products  Button{
+  background-color: var(--accent);
+  padding: 1rem;
+  border-radius: var(--radius);
+ 
+}
+.product-detail Button{
   background-color: var(--accent);
   padding: 1rem;
   border-radius: var(--radius);
@@ -111,6 +117,15 @@ label{
       transform: scale(1.5); /* Adjust the scale factor as needed */
       margin-right: 5px;} /* Optional: Adjust spacing */
 /* Media Queries */
+
+.product-detail{
+display: flex;;
+justify-content: center;
+padding:2rem;
+width:50%;
+margin-left: auto;
+margin-right: auto;
+}
 @media (max-width: 771px) {
   .filters {
     width: 40%;

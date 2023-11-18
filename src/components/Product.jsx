@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {Card} from "react-bootstrap"
-import {Button} from 'react-bootstrap';
+// import {Button} from 'react-bootstrap';
 import './style.css';
 import { CartContext } from '../context/Context';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import './style.css';
 
 const Product = ({SingleProduct}) => {
 
-  const { state:{cart},dispatch } = useContext(CartContext);
+  const { state:{cart},dispatchCart } = useContext(CartContext);
 
 const id = SingleProduct.id;
 console.log(cart);
@@ -28,7 +28,7 @@ console.log(cart);
           {cart.some((p) => p.id === SingleProduct.id) ? (
             <button
               onClick={() => {
-                dispatch({
+                dispatchCart({
                   type: 'REMOVE_FROM_CART',
                   payload: SingleProduct,
                 });
@@ -39,7 +39,7 @@ console.log(cart);
           ) : (
             <button
               onClick={() => {
-                dispatch({
+                dispatchCart({
                   type: 'ADD_TO_CART',
                   payload: SingleProduct,
                 });
