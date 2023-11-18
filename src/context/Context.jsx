@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect,useContext, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer } from 'react';
 import axios from 'axios'; 
 
 
@@ -13,16 +13,16 @@ export default function  ContextProvider({children}){
 
   
 const [state, dispatch] = useReducer(cartReducer, {
-  
   products: [],
   cart: [],
-  selectedCategory:'',
+  selectedCategory: '',
+  // searchResults: [],
 });
    useEffect (()=>{
     const fetchData=async()=>{
       try {
         const response = await axios.get(
-          'https://dummyjson.com/products?skip=5&limit=100'
+          'https://dummyjson.com/products?skip=0&limit=100'
         );
  
         dispatch({

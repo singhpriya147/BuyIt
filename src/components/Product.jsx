@@ -8,7 +8,6 @@ import './style.css';
 
 const Product = ({SingleProduct}) => {
 
-// const {state:{cart},dispatch}=CartState()
   const { state:{cart},dispatch } = useContext(CartContext);
 
 const id = SingleProduct.id;

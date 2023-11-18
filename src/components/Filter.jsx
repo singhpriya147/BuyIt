@@ -30,16 +30,16 @@ const Filter = () => {
             checked={state.selectedCategory === 'smartphones'}
             onChange={() => handleCategoryChange('smartphones')}
           />
-          smartphones
+          Smartphones
         </label>
         <label className='larger-radio'>
           <input
             type='radio'
-            value='smartphones'
-            checked={state.selectedCategory === 'smartphones'}
-            onChange={() => handleCategoryChange('smartphones')}
+            value='laptops'
+            checked={state.selectedCategory === 'laptops'}
+            onChange={() => handleCategoryChange('laptops')}
           />
-          laptops
+          Laptops
         </label>
         <label className='larger-radio'>
           <input
@@ -48,7 +48,7 @@ const Filter = () => {
             checked={state.selectedCategory === 'fragrances'}
             onChange={() => handleCategoryChange('fragrances')}
           />
-          fragrances
+          Fragrances
         </label>
         <label className='larger-radio'>
           <input
@@ -57,16 +57,16 @@ const Filter = () => {
             checked={state.selectedCategory === 'skincare'}
             onChange={() => handleCategoryChange('skincare')}
           />
-          skincare
+          Skincare
         </label>
         <label className='larger-radio'>
           <input
             type='radio'
-            value='skincare'
-            checked={state.selectedCategory === 'skincare'}
-            onChange={() => handleCategoryChange('skincare')}
+            value='groceries'
+            checked={state.selectedCategory === 'groceries'}
+            onChange={() => handleCategoryChange('groceries')}
           />
-          skincare
+          Groceries
         </label>
         <label className='larger-radio'>
           <input
@@ -75,7 +75,88 @@ const Filter = () => {
             checked={state.selectedCategory === 'mens-shoes'}
             onChange={() => handleCategoryChange('mens-shoes')}
           />
-          Men
+          Men-Shoes
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='mens-shirts'
+            checked={state.selectedCategory === 'mens-shirts'}
+            onChange={() => handleCategoryChange('mens-shirts')}
+          />
+          Men-Shirts
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='mens-watches'
+            checked={state.selectedCategory === 'mens-watches'}
+            onChange={() => handleCategoryChange('mens-watches')}
+          />
+          Men-Watches
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='home-decoration'
+            checked={state.selectedCategory === 'home-decoration'}
+            onChange={() => handleCategoryChange('home-decoration')}
+          />
+          Home-decoration
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='furniture'
+            checked={state.selectedCategory === 'furniture'}
+            onChange={() => handleCategoryChange('furniture')}
+          />
+          Furniture
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='womens-dresses'
+            checked={state.selectedCategory === 'womens-dresses'}
+            onChange={() => handleCategoryChange('womens-dresses')}
+          />
+          womens-dresses
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='womens-shoes'
+            checked={state.selectedCategory === 'womens-shoes'}
+            onChange={() => handleCategoryChange('womens-shoes')}
+          />
+          womens-shoes
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='womens-watches'
+            checked={state.selectedCategory === 'womens-watches'}
+            onChange={() => handleCategoryChange('womens-watches')}
+          />
+          womens-watches
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='womens-bags'
+            checked={state.selectedCategory === 'womens-bags'}
+            onChange={() => handleCategoryChange('womens-bags')}
+          />
+          womens-bags 
+        </label>
+        <label className='larger-radio'>
+          <input
+            type='radio'
+            value='womens-jewellery'
+            checked={state.selectedCategory === 'womens-jewellery'}
+            onChange={() => handleCategoryChange('womens-jewellery')}
+          />
+           womens-jewellery
         </label>
       </div>
     </div>

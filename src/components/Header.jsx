@@ -8,7 +8,7 @@ import { CartContext } from '../context/Context';
 const Header = () => {
   const {
     state: { cart },
-    dispatch,
+   
   } = useContext(CartContext);
 
   return (
