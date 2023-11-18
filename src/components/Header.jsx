@@ -4,7 +4,7 @@ import { Badge, Button, Container, FormControl, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './style.css';
 import { CartContext } from '../context/Context';
-
+import img from '../assets/images/online-shopping.png'
 const Header = () => {
  
 
@@ -54,7 +54,11 @@ const Header = () => {
               fontWeight: '700',
             }}
           >
-            <Link to='/'>🛍️Swift Cart</Link>
+            <Link to='/'>
+              {' '}
+              <img src={img} alt='logo'  style={{height:'50px',width:'50px'}}/>
+              Swift Cart
+            </Link>
           </Navbar.Brand>
 
           <Link to='/Cart'>
@@ -74,7 +78,6 @@ const Header = () => {
             paddingBottom: '1rem',
           }}
         >
-          
           <FormControl
             style={{
               width: '100%',
@@ -89,7 +92,6 @@ const Header = () => {
             aria-label='Search'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-           
           />
         </Navbar.Collapse>
       </Container>
