@@ -8,41 +8,39 @@ const Cart = () => {
 
    const {
      state: { cart },
-     dispatch,
+     dispatchCart,
    } = useContext(CartContext);
   return (
-    <div>
+    <div className='cart'>
+      <h2>Your Cart</h2>
       {cart.length > 0 ? (
         <>
           {cart.map((prod) => (
-            <span className='cartitem' key={prod.id}>
+            <div className='cartitem' key={prod.id}>
               <img
-                src={prod.image}
+                src={prod.images[0]}
                 className='cartItemImg'
                 alt={prod.title}
               />
               <div className='cartItemDetail'>
                 <span>{prod.title}</span>
-                <span>
-                  {prod.price}
-                </span>
+                <span>{prod.price}$</span>
               </div>
               <AiFillDelete
                 fontSize='20px'
                 style={{ cursor: 'pointer' }}
                 onClick={() =>
-                  dispatch({
+                  dispatchCart({
                     type: 'REMOVE_FROM_CART',
                     payload: prod,
                   })
                 }
               />
-            </span>
+            </div>
           ))}
-          
         </>
       ) : (
-        <span style={{ padding: 10 }}>Cart is Empty!</span>
+        <span style={{ padding: 10 }}>Your Cart is Empty!</span>
       )}
     </div>
   );

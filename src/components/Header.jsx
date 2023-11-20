@@ -1,7 +1,7 @@
 import React, { useContext ,useState,useEffect} from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Badge, Button, Container, FormControl, Navbar } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './style.css';
 import { CartContext } from '../context/Context';
 import img from '../assets/images/online-shopping.png'
@@ -55,7 +55,7 @@ const Header = () => {
             }}
           >
             <Link to='/'>
-              {' '}
+            
               <img src={img} alt='logo'  style={{height:'50px',width:'50px'}}/>
               Swift Cart
             </Link>

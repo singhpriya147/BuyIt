@@ -126,6 +126,19 @@ width:50%;
 margin-left: auto;
 margin-right: auto;
 }
+.cart{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.cartitem{
+  width: 500px;
+  margin-left: auto;
+  margin-right:auto;
+  background-color:var(--card);
+  margin-top: 1rem;
+  padding:1rem
+}
 @media (max-width: 771px) {
   .filters {
     width: 40%;
