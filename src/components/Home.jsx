@@ -14,19 +14,33 @@ const Home = () => {
     return <div>Loading...</div>; // Or a loading indicator while data is being fetched
   }
 
-console.log(state.products);
-console.log(state.products.products);
+console.log(state.products); // object
+console.log(state.products.products);// array 
 
+// const filteredProducts = state.products.products.filter((product) => {
+//   // Check if the product's category matches the selected category
+//   const categoryMatch =
+//     state.selectedCategory === '' ||
+//     product.category === state.selectedCategory;
 
+//   // Check if the product's price is within the selected price range
+//   const priceInRange =
+//     product.price >= state.minPrice && product.price <= state.maxPrice;
+
+//   // Include the product in the filtered list if both conditions are met
+//   return categoryMatch && priceInRange;
+// });
 
 
     
   const filteredProducts =
-    state.selectedCategory !== ''
+    state.selectedCategory !== '' 
       ? state.products.products.filter(
-          (product) => product.category === state.selectedCategory
+          (product) => product.category === state.selectedCategory     && product.price <= state.maxPrice
         )
       : state.products.products;
+
+      console.log(filteredProducts);
   return (
     <div className='home'>
       <div className='productContainer'>
@@ -34,10 +48,9 @@ console.log(state.products.products);
           ? filteredProducts.map((product) => {
               return <Product SingleProduct={product} key={product.id} />;
             })
-          : state.products.map((product) => (
+          : state.products.products.map((product) => (
               <Product SingleProduct={product} key={product.id} />
-            ))
-            }
+            ))}
       </div>
       <Filter />
       <div></div>

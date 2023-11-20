@@ -27,6 +27,11 @@ export const cartReducer = (state, action) => {
         ...state,
         products: action.payload,
       };
+    case 'SET_MIN_PRICE':
+      return { ...state, minPrice: action.payload };
+
+    case 'SET_MAX_PRICE':
+      return { ...state, maxPrice: action.payload };
     default:
       return state;
   }

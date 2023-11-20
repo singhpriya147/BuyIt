@@ -1,5 +1,5 @@
 // Filter.js
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { CartContext } from '../context/Context';
 
 const Filter = () => {
@@ -10,9 +10,18 @@ const Filter = () => {
     dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: selectedCategory });
   };
 
+
+  const handleMaxPriceChange = (e) => {
+    dispatchCart({
+      type: 'SET_MAX_PRICE',
+      payload: parseInt(e.target.value, 10),
+    });
+  };
+ 
   return (
     <div className='filter-container'>
       <h3>Filter by Category:</h3>
+      
       <div className='category-options'>
         <label className='larger-radio'>
           <input
@@ -147,7 +156,7 @@ const Filter = () => {
             checked={state.selectedCategory === 'womens-bags'}
             onChange={() => handleCategoryChange('womens-bags')}
           />
-          womens-bags 
+          womens-bags
         </label>
         <label className='larger-radio'>
           <input
@@ -156,8 +165,25 @@ const Filter = () => {
             checked={state.selectedCategory === 'womens-jewellery'}
             onChange={() => handleCategoryChange('womens-jewellery')}
           />
-           womens-jewellery
+          womens-jewellery
         </label>
+      </div>
+     
+      <div className='price-range'>
+          <h3>Filter by Price Range:</h3>
+       
+          <label htmlFor='maxPrice'>Max: ${state.maxPrice}</label>
+          <input
+            type='range'
+            id='maxPrice'
+            name='maxPrice'
+            min='0'
+            max='1000'
+            step='10'
+            value={state.maxPrice}
+            onChange={handleMaxPriceChange}
+          />
+       
       </div>
     </div>
   );

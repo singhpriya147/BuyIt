@@ -16,7 +16,9 @@ const [state, dispatchCart] = useReducer(cartReducer, {
   products: [],
   cart: [],
   selectedCategory: '',
-  // searchResults: [],
+
+
+maxprice:5000,
 });
    useEffect (()=>{
     const fetchData=async()=>{
