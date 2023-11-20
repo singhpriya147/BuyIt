@@ -46,9 +46,9 @@ body{
   display: flex;
 }
 
-.filters {
-  background-color: #343a40;
-  color: white;
+.checkout {
+  background-color:var(--secondary);
+  color:black;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ body{
   height: 86vh;
 }
 
-.filters > span {
+.checkout > span {
   padding-bottom: 20px;
 }
 
@@ -129,7 +129,17 @@ margin-right: auto;
 .cart{
   display: flex;
   align-items: center;
+  flex-direction: row;
+ 
+padding: 2rem;
+}
+.cart-main{
+  width: 75%;
+   height: 100vh;
+   display: flex;
+  align-items: center;
   flex-direction: column;
+  
 }
 .cartitem{
   width: 500px;
@@ -147,13 +157,13 @@ margin-right: auto;
   border-radius: var(--radius);
 }
 @media (max-width: 771px) {
-  .filters {
+  .checkout {
     width: 40%;
     padding: 10px;
     margin: 5px;
   }
 
-  .filters > span {
+  .checkout > span {
     font-size: 10px;
   }
 

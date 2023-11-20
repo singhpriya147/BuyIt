@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState,useEffect } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { CartContext } from '../context/Context';
 import './style.css';
@@ -8,7 +8,11 @@ const Cart = () => {
     state: { cart },
     dispatchCart,
   } = useContext(CartContext);
+const [total, setTotal] = useState();
 
+useEffect(() => {
+  setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0));
+}, [cart]);
   const handleDecrease = (prod) => {
     dispatchCart({
       type: 'CHANGE_CART_QTY',
@@ -33,43 +37,54 @@ const Cart = () => {
 
   return (
     <div className='cart'>
-      <h2>Your Cart</h2>
-      {cart.length > 0 ? (
-        <>
-          {cart.map((prod) => (
-            <div className='cartitem' key={prod.id}>
-              <img
-                src={prod.images[0]}
-                className='cartItemImg'
-                alt={prod.title}
-              />
-              <div className='cartItemDetail'>
-                <span>{prod.title}</span>
-                <span>{prod.price}$</span>
+      <div className='cart-main'>
+        <h2>Your Cart</h2>
+        {cart.length > 0 ? (
+          <>
+            {cart.map((prod) => (
+              <div className='cartitem' key={prod.id}>
+                <img
+                  src={prod.images[0]}
+                  className='cartItemImg'
+                  alt={prod.title}
+                />
+                <div className='cartItemDetail'>
+                  <span>{prod.title}</span>
+                  <span>{prod.price}$</span>
+                </div>
+                <div className='quantity-control'>
+                  <button onClick={() => handleDecrease(prod)}>-</button>
+                  <span className='qyt'>{prod.qty}</span>
+                  <button onClick={() => handleIncrease(prod)}>+</button>
+                </div>
+                <AiFillDelete
+                  fontSize='20px'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() =>
+                    dispatchCart({
+                      type: 'REMOVE_FROM_CART',
+                      payload: prod,
+                    })
+                  }
+                />
               </div>
-              <div className='quantity-control'>
-                <button onClick={() => handleDecrease(prod)}>-</button>
-                <span className='qyt'>{prod.qty}</span>
-                <button onClick={() => handleIncrease(prod)}>+</button>
-              </div>
-              <AiFillDelete
-                fontSize='20px'
-                style={{ cursor: 'pointer' }}
-                onClick={() =>
-                  dispatchCart({
-                    type: 'REMOVE_FROM_CART',
-                    payload: prod,
-                  })
-                }
-              />
-            </div>
-          ))}
-        </>
-      ) : (
-        <span style={{ padding: 10 }}>Your Cart is Empty!</span>
-      )}
+            ))}
+          </>
+        ) : (
+          <span style={{ padding: 10 }}>Your Cart is Empty!</span>
+        )}
+      </div>
+
+      <div className='checkout'>
+        <span className='title'>Subtotal ({cart.length}) items</span>
+        <span style={{ fontWeight: 700, fontSize: 20 }}>Total: ₹ {total}</span>
+        <button type='button' disabled={cart.length === 0}>
+          Proceed to Checkout
+        </button>
+      </div>
     </div>
   );
+  
 };
 
 export default Cart;
