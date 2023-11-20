@@ -3,11 +3,11 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/Context';
 
 const Filter = () => {
-  const { state, dispatch } = useContext(CartContext);
+  const { state, dispatchCart } = useContext(CartContext);
 
   const handleCategoryChange = (selectedCategory) => {
     // Dispatch an action to update the selected category in the state
-    dispatch({ type: 'SET_SELECTED_CATEGORY', payload: selectedCategory });
+    dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: selectedCategory });
   };
 
   return (
