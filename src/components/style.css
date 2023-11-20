@@ -162,7 +162,9 @@ padding: 2rem;
     padding: 10px;
     margin: 5px;
   }
-
+.cart{
+  flex-direction: column;
+}
   .checkout > span {
     font-size: 10px;
   }
