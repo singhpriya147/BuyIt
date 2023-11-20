@@ -10,7 +10,7 @@ const Header = () => {
 
   const {
     state: { cart },
-    dispatch,
+    dispatchCart,
   } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState('');
  
@@ -25,7 +25,7 @@ const Header = () => {
         const data = await response.json();
 
        
-        dispatch({ type: 'FETCH_SEARCH_RESULTS', payload: data.products });
+        dispatchCart({ type: 'FETCH_SEARCH_RESULTS', payload: data.products });
       } catch (error) {
         console.error('Error fetching search results:', error);
       } 
@@ -34,7 +34,7 @@ const Header = () => {
     if (searchTerm.trim() !== '') {
       fetchSearchResults();
     }
-  }, [searchTerm, dispatch]);
+  }, [searchTerm, dispatchCart]);
   return (
     <Navbar
       bg='dark'
