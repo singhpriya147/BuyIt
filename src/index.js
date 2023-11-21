@@ -5,12 +5,15 @@ import App from './App';
 
 // import { CartContext } from './context/Context';
 import ContextProvider from './context/Context';
+import { ThemeProvider } from './context/ThemeContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
+    <ThemeProvider>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

@@ -4,6 +4,7 @@ import { Badge, Button, Container, FormControl, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css';
 import { CartContext } from '../context/Context';
+import ThemeToggle from './ThemeToggle';
 import img from '../assets/images/online-shopping.png'
 const Header = () => {
  
@@ -95,6 +96,7 @@ const Header = () => {
           />
         </Navbar.Collapse>
       </Container>
+      <ThemeToggle/>
     </Navbar>
   );
 };

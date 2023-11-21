@@ -38,11 +38,7 @@ console.log(state.products.products);// array
       ? state.products.products.filter(
           (product) => product.category === state.selectedCategory     && product.price <= state.maxPrice
         )
-      : state.products.products.filter((product)=>
-       
-        
-          product.price <= state.maxPrice
-      ) ;
+      : state.products.products
 
       console.log(filteredProducts);
   return (

@@ -1,5 +1,5 @@
 /* header styles */
-:root {
+/* :root {
   --text: hsl(42, 92%, 5%);
   --background: #dbf3ec;
   --primary:#2caa87;
@@ -7,6 +7,22 @@
   --accent: #00ffb4;
   --card: #dcfdf8;
   --radius: 0.5rem;
+} */
+:root[data-theme="light"] {
+  --text: hsl(42, 92%, 5%);
+  --background: hsl(43, 47%, 97%);
+  --primary: hsl(124, 15%, 45%);
+  --secondary: hsl(119, 24%, 57%);
+  --accent: hsl(120, 22%, 7%);
+  --card: rgba(0, 0, 0, 0.03);
+}
+:root[data-theme="dark"] {
+  --text: hsl(42, 92%, 95%);
+  --background: hsl(43, 47%, 3%);
+  --primary: hsl(124, 15%, 55%);
+  --secondary: hsl(119, 24%, 43%);
+  --accent: hsl(121, 35%, 23%);
+  --card: rgba(255, 255, 255, 0.03);
 }
 body{
   background-color: var(--background);
