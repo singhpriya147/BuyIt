@@ -1,4 +1,5 @@
 import React,{useContext} from 'react'
+// import Carousel from './Carousel'
 // import Header from './Header'
 // import jasonData from  '../data/data.json'
 import { CartContext } from '../context/Context'
@@ -43,6 +44,7 @@ console.log(state.products.products);// array
       console.log(filteredProducts);
   return (
     <div className='home'>
+      {/* <Carousel/> */}
       <div className='productContainer'>
         {filteredProducts
           ? filteredProducts.map((product) => {
