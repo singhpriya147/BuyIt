@@ -5,16 +5,23 @@ import './style.css';
 import { CartContext } from '../context/Context';
 import { Link } from 'react-router-dom';
 import './style.css';
+import {stripHtml} from 'string-strip-html';
+import PropTypes from 'prop-types';
 
-const Product = ({SingleProduct}) => {
 
-  const { state:{cart},dispatchCart } = useContext(CartContext);
 
-const id = SingleProduct.id;
-console.log(cart);
+
+const Product = ({product}) => {
+
+   const { result } = stripHtml(product.description);
+  // const { state:{cart},dispatchCart } = useContext(CartContext);
+
+// const id = SingleProduct.id;
+// console.log(cart);
   return (
-    <Link to={`/${id}`}>
-      <div className='products'>
+    // <Link to={`/${id}`}>
+    <>
+      {/* <div className='products'>
         <Card>
           <Card.Img
             src={SingleProduct.images[0]}
@@ -50,8 +57,32 @@ console.log(cart);
           )}
         </Card>
       </div>
-    </Link>
+    // </Link> */}
+
+      <div className='product__card'>
+        <img
+          className='product__image'
+          src={product.image?.url}
+          alt={product.name}
+        />
+        <div className='product__info'>
+          <h4 className='product__name'>{product.name}</h4>
+          <p className='product__description'>
+            {/* product description stripped of html tags */}
+            {result}
+          </p>
+          <div className='product__details'>
+            <p className='product__price'>
+              {product.price.formatted_with_symbol}
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
+Product.propTypes = {
+  product: PropTypes.object,
+};
 export default Product

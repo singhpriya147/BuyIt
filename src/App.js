@@ -7,7 +7,7 @@ import PrdouctDetail from './components/Product_Details'
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <div className='app'>
         <Routes>
           <Route path='/' exact element={<Home />}></Route>
