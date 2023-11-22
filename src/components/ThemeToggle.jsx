@@ -1,25 +1,21 @@
 import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { ThemeContext } from '../context/ThemeContext';
 import {useContext} from 'react';
-
-
+import { CiDark } from 'react-icons/ci';
+import { CiLight } from 'react-icons/ci';
 export default function ThemeToggle() {
 
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
-    <button
-      type='button'
-      // className={styles.button}
-      aria-label={theme}
-      aria-live='polite'
-      title='toggles light and dark mode'
-      onClick={toggleTheme}
+    <
+     
+      
     >
       {theme === 'dark' ? (
-        <BsMoonStarsFill aria-hidden size={24} />
+        <CiDark aria-hidden size={24} onClick={toggleTheme} />
       ) : (
-        <BsSunFill aria-hidden size={24} />
+        <CiLight size={24}  onClick={toggleTheme}/>
       )}
-    </button>
+    </>
   );
 }

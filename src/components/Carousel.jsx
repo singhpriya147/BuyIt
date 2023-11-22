@@ -1,22 +1,32 @@
-import React ,{useState}from 'react'
-import './style.css'
-import {images} from '../assets/images/carouselData'
-import './Carousel.css'
-import { FaArrowLeft } from 'react-icons/fa6';
-import { FaArrowRight } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import './style.css';
+import { images } from '../assets/images/carouselData';
+import './Carousel.css';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
- const Carousel = () => {
-  const[currImg,setCurrImg]=useState(1);
+const Carousel = () => {
+  const [currImg, setCurrImg] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrImg((prevImg) => (prevImg + 1) % images.length);
+    }, 5000); // Change the interval duration (in milliseconds) as needed
+
+    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+  }, []);
+
   return (
     <div className='carousel'>
       <div
         className='carouselInner'
-        style={{ backgroundImage: `url(${images[currImg].img})` }}
+        style={{ backgroundImage: `url(${images[currImg].img})` , transition: 'background-image 3s ease-in-out',}}
       >
         <div
           className='left'
           onClick={() => {
-            currImg > 0 && setCurrImg(currImg - 1);
+            setCurrImg(
+              (prevImg) => (prevImg - 1 + images.length) % images.length
+            );
           }}
         >
           <FaArrowLeft style={{ fontSize: 30 }} />
@@ -28,7 +38,7 @@ import { FaArrowRight } from "react-icons/fa";
         <div
           className='right'
           onClick={() => {
-            currImg < images.length - 1 && setCurrImg(currImg + 1);
+            setCurrImg((prevImg) => (prevImg + 1) % images.length);
           }}
         >
           <FaArrowRight style={{ fontSize: 30 }} />
@@ -36,6 +46,6 @@ import { FaArrowRight } from "react-icons/fa";
       </div>
     </div>
   );
-}
+};
 
-export default Carousel
+export default Carousel;

@@ -5,8 +5,8 @@
   padding: 0;
 }
 :root[data-theme="light"] {
-  --text: hsl(42, 92%, 5%);
-  --background: #D6CC99;
+  --text: hwb(42 0% 91%);
+  --background:rgba(214,204,153,0.2);
   --primary: #001524;
   --secondary:#445D48;
   --accent: #FDE5D4;
@@ -31,14 +31,18 @@ body{
 }
 
  .navbar {
-      background-color: var(--secondary);
+      background-color:white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-left :1rem;
       padding-right :1rem;
+      height:50px
     }
-
+.navbar h3{
+     font-weight: 200;
+     font-size: 2rem;
+}
     .navbar-brand {
       display: flex;
       align-items: center;
@@ -84,7 +88,7 @@ body{
   padding-left: 3.5rem;
   border-width: 0px;
   outline: none;
-  /* background-color: var(--secondary); */
+  background-color: var(--background,0.8);
   /* border: 1px solid var(--border); */
   color: var(--text);
   /* /* border-top-left-radius: 0.5rem; */
