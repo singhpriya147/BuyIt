@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import { images } from '../assets/images/carouselData';
+// import { images } from '../assets/images/carouselData';
+import {images} from '../assets/images/carouselData'
 import './Carousel.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 

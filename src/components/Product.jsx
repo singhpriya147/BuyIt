@@ -15,16 +15,42 @@ console.log(cart);
   return (
     <Link to={`/${id}`}>
       <div className='products'>
-        <Card>
+        <Card style={{ display: 'flex', flexDirection: 'column' }}>
           <Card.Img
             src={SingleProduct.images[0]}
             alt={SingleProduct.title}
             style={{ width: '200px', height: '200px' }}
           ></Card.Img>
-          <Card.Title>{SingleProduct.title}</Card.Title>
+          <Card.Title
+            style={{
+              fontSize: '1rem',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            {SingleProduct.title}
+            <Card.Subtitle
+                      style={{backgroundColor:'orange',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '50px',
+            height: '50px',
+            borderRadius: '50%',
+            fontSize: '10px',
+            color: 'black', // Text color
+            fontWeight: 'bold', }}// Optional: Adjust font weight as needed}}
+            >
+              {SingleProduct.discountPercentage}%off
+            </Card.Subtitle>
+          </Card.Title>
 
-          <Card.Subtitle>{SingleProduct.price}$</Card.Subtitle>
-          <Card.Subtitle style={{backgroundColor:'red', display:"block"}}>{SingleProduct.discountPercentage}% OFF</Card.Subtitle>
+          <Card.Subtitle style={{ fontWeight: 'lighter' }}>
+            {SingleProduct.price}$
+          </Card.Subtitle>
+
           {cart.some((p) => p.id === SingleProduct.id) ? (
             <button
               onClick={() => {
