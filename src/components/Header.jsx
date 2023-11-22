@@ -6,6 +6,7 @@ import './style.css';
 import { CartContext } from '../context/Context';
 import ThemeToggle from './ThemeToggle';
 import img from '../assets/images/online-shopping.png'
+import { CiSearch } from 'react-icons/ci';
 const Header = () => {
  
 
@@ -37,67 +38,40 @@ const Header = () => {
     }
   }, [searchTerm, dispatchCart]);
   return (
-    <Navbar
-      bg='dark'
-      variant='dark'
-      expand='lg'
-      style={{ backgroundColor: 'var(--secondary)', maxheight: '50px' }}
-    >
-      <Container>
-        <Navbar.Collapse
-          id='responsive-navbar-nav'
-          style={{ display: 'flex', justifyContent: 'space-between' }}
-        >
-          <Navbar.Brand
-            style={{
-              marginRight: '15px',
-              fontSize: 'xxx-large',
-              fontWeight: '700',
-            }}
-          >
-            <Link to='/'>
-            
-              <img src={img} alt='logo'  style={{height:'50px',width:'50px'}}/>
-              Swift Cart
-            </Link>
-          </Navbar.Brand>
-
-          <Link to='/Cart'>
-            <Button>
-              <FaShoppingCart color='black' fontSize='25px' />
-              <Badge>{cart.length}</Badge>
-            </Button>
-          </Link>
-        </Navbar.Collapse>
-      </Container>
-      <Container>
-        <Navbar.Collapse
-          id='responsive-navbar-nav'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            paddingBottom: '1rem',
-          }}
-        >
-          <FormControl
-            style={{
-              width: '100%',
-              maxWidth: '500px',
-              height: '40px',
-              marginRight: '15px',
-              padding: '5px',
-            }}
+    <div className='navbar'>
+      <div className='navbar-brand'>
+        <Link to='/'>
+          <img src={img} alt='logo' />
+          Swift Cart
+        </Link>
+      </div>
+      <div className='search'>
+        <form action='' className='search-form'>
+          <CiSearch className='search-icon' />
+          <input
             type='search'
             placeholder='Search a product...'
-            // className='m-auto'
             aria-label='Search'
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onchange={(e) => setSearchTerm(() => e.target.value)}
           />
-        </Navbar.Collapse>
-      </Container>
-      <ThemeToggle/>
-    </Navbar>
+        </form>
+      </div>
+      {/* <div className='navbar-nav-items'> */}
+      <div className='theme-n-cart'>
+        <ThemeToggle />
+        <Link to='/Cart'>
+          <button>
+            <FaShoppingCart
+              color='black'
+              style={{ 'font-size': '25px' }}
+            ></FaShoppingCart>
+            <span class='badge'>{cart.length}</span>
+          </button>
+        </Link>
+      </div>
+      {/* </div> */}
+    </div>
   );
 };
 
