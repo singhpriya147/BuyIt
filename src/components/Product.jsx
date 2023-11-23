@@ -15,8 +15,7 @@ console.log(cart);
   return (
     <Link to={`/${id}`}>
       <div className='products'>
-        
-        <Card style={{ display: 'flex', flexDirection: 'column' }}>
+        <Card style={{ display: 'flex', flexDirection: 'column',gap:'3px' }}>
           <Card.Img
             src={SingleProduct.images[0]}
             alt={SingleProduct.title}
@@ -29,22 +28,29 @@ console.log(cart);
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
+              margin: '1.5rem,',
+           
             }}
           >
             {SingleProduct.title}
             <Card.Subtitle
-                      style={{backgroundColor:'orange',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '50px',
-            height: '50px',
-            borderRadius: '50%',
-            fontSize: '10px',
-            color: 'black', // Text color
-            fontWeight: 'bold', }}// Optional: Adjust font weight as needed}}
+              style={{
+                backgroundColor: 'orange',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                fontSize: '10px',
+                color: 'black', // Text color
+                fontWeight: 'bold',
+                padding: '1.2rem',
+              }} // Optional: Adjust font weight as needed}}
             >
-              {SingleProduct.discountPercentage}%off
+              <span>{SingleProduct.discountPercentage}</span>
+              <span>%off</span>
             </Card.Subtitle>
           </Card.Title>
 
