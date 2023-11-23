@@ -160,11 +160,11 @@ body{
 
 
  .product-container-header{
-  width: 60%;
+  width: 80%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   /* background-color: red; */
   padding-top: 1rem;
  }
@@ -221,6 +221,7 @@ input[type="range"]::-moz-range-track {
    background-color: var(--secondary);
    border-radius: 0.5rem;
    height: 0.5rem;
+   /* width: 80px; */
 }
 
 /* slider thumb */
