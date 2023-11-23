@@ -71,14 +71,15 @@ useEffect(() => {
             ))}
           </>
         ) : (
-          <span style={{ padding: 10 }}>Your Cart is Empty!</span>
+          <h3 style={{ padding: 10 }}>Your Cart is Empty!</h3>
         )}
       </div>
 
       <div className='checkout'>
-        <span className='title'>Subtotal ({cart.length}) items</span>
+        <span className='title'>You added  ({cart.length}) items to cart</span>
+       
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: ₹ {total}</span>
-        <button type='button' disabled={cart.length === 0}>
+        <button  disabled={cart.length === 0}>
           Proceed to Checkout
         </button>
       </div>

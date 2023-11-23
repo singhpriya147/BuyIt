@@ -58,6 +58,7 @@ const ProductDetails = () => {
         <Card.Subtitle>Rating: {product.rating}</Card.Subtitle>
         {cart.some((p) => p.id === product.id) ? (
           <button
+            className='products Button'
             onClick={() => {
               dispatchCart({
                 type: 'REMOVE_FROM_CART',
@@ -69,10 +70,11 @@ const ProductDetails = () => {
           </button>
         ) : (
           <button
+            className='products Button'
             onClick={() => {
               dispatchCart({
                 type: 'ADD_TO_CART',
-                payload:product,
+                payload: product,
               });
             }}
           >
