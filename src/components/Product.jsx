@@ -15,6 +15,7 @@ console.log(cart);
   return (
     <Link to={`/${id}`}>
       <div className='products'>
+        
         <Card style={{ display: 'flex', flexDirection: 'column' }}>
           <Card.Img
             src={SingleProduct.images[0]}

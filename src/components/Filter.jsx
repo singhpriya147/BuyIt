@@ -169,7 +169,7 @@ const Filter = () => {
         </label>
       </div>
      
-      <div className='price-range'>
+      {/* <div className='price-range'>
           <h3>Filter by Price Range:</h3>
        
           <label htmlFor='maxPrice'>Max: ${state.maxPrice}</label>
@@ -184,7 +184,7 @@ const Filter = () => {
             onChange={handleMaxPriceChange}
           />
        
-      </div>
+      </div> */}
     </div>
   );
 };

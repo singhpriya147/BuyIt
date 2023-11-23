@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-    <Carousel/>
+   
       <div className='app'>
         <Routes>
           <Route path='/' exact element={<Home />}></Route>
