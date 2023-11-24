@@ -248,7 +248,7 @@ input[type="range"]::-moz-range-thumb {
 
 
 .checkout {
-  background-color:var(--secondary);
+  background-color:var(--background);
   color:black;
   padding: 20px;
   display: flex;
@@ -257,6 +257,7 @@ input[type="range"]::-moz-range-thumb {
   margin: 10px;
   height: 86vh;
   border-radius: 1rem;
+  /* border:1.5px solid var(--secondary) */
 }
 
 .checkout > span {
@@ -267,15 +268,15 @@ input[type="range"]::-moz-range-thumb {
   font-size: 30px;
 }
 
-.productContainer {
+#productContainer {
   display: flex;
   width: 70%;
   padding: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content:baseline;
   margin-left: auto;
   margin-right: auto;
-  
+gap:2rem  
 }
 
 .products {

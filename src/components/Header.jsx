@@ -1,43 +1,62 @@
 import React, { useContext ,useState,useEffect} from 'react';
 
-import { Badge, Button, Container, FormControl, Navbar } from 'react-bootstrap';
+
 import { Link } from 'react-router-dom';
 import './style.css';
 import { CartContext } from '../context/Context';
 import ThemeToggle from './ThemeToggle';
-import img from '../assets/images/online-shopping.png'
+
 import { CiSearch } from 'react-icons/ci';
 import { CiShoppingCart } from 'react-icons/ci';
+
+import { PiGithubLogoLight } from 'react-icons/pi';
 const Header = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All'); // Default category
-  const [categories, setCategories] = useState([
-    'All Catogories',
-   'Smartphones',
-'Laptops',
-'Fragrances',
-'Skincare',
-'Groceries',
-'Men-Shoes',
-'Men-Shirts',
-'Men-Watches',
-'Home-decoration',
-'Furniture',
-'womens-dresses',
-'womens-shoes',
-'womens-watches',
-'womens-bags',
-'womens-jewellery',
-  ]); // Add your categories here
-  const {
-    state: { cart },
-    dispatchCart,
-  } = useContext(CartContext);
-  const [searchTerm, setSearchTerm] = useState('');
+ const [searchTerm, setSearchTerm] = useState('');
+
+
+   const {
+     state: { cart },
+     dispatchCart,
+    //  selectedCategory,
+   } = useContext(CartContext);
+
+  // console.log(selectedCategory);
+  const categories = [
+    { label: 'All Categories', value: '' },
+    { label: 'Smartphones', value: 'smartphones' },
+    { label: 'Laptops', value: 'laptops' },
+    { label: 'Fragrances', value: 'fragrances' },
+    { label: 'Skincare', value: 'skincare' },
+    { label: 'Groceries', value: 'groceries' },
+    { label: 'Mens-Shoes', value: 'mens-shoes' },
+    { label: 'Mens-Shirts', value: 'mens-shirts' },
+    { label: 'Mens-Watches', value: 'mens-watches' },
+    { label: 'Home-decoration', value: 'home-decoration' },
+    { label: 'Furniture', value: 'furniture' },
+    { label: 'Womens-dresses', value: 'womens-dresses' },
+    { label: 'Womens-shoes', value: 'womens-shoes' },
+    { label: 'Womens-watches', value: 'womens-watches' },
+    { label: 'Womens-jewellery', value: 'womens-jewellery' },
+    
+
+    
+
+ 
+  ];
+ 
+
+
+
 const handleCategoryChange = (category) => {
-  setSearchTerm(''); // Clear search term when changing category
-  setSelectedCategory(category);
-  // You can fetch products based on the selected category here if needed
+
+    const productContainerDiv = document.getElementById('productContainer');
+    if (productContainerDiv) {
+      productContainerDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+  dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: category });
+  console.log(category);
 };
+ 
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
@@ -63,7 +82,6 @@ const handleCategoryChange = (category) => {
     <div className='navbar'>
       <div className='navbar-brand'>
         <Link to='/'>
-          {/* <img src={img} alt='logo' /> */}
           <h3> BuyIt.</h3>
         </Link>
       </div>
@@ -80,15 +98,15 @@ const handleCategoryChange = (category) => {
         </form>
       </div>
       <div className='categories-dropdown'>
+      
         <select
           id='category'
-          value={selectedCategory}
+          // value={category}
           onChange={(e) => handleCategoryChange(e.target.value)}
-         
         >
           {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
+            <option key={category.value} value={category.value}>
+              {category.label}
             </option>
           ))}
         </select>
@@ -102,6 +120,7 @@ const handleCategoryChange = (category) => {
           ></CiShoppingCart>
           <span class='badge'>{cart.length}</span>
         </Link>
+        <PiGithubLogoLight style={{ fontSize: '25px' }} />
       </div>
     </div>
   );

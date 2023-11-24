@@ -76,7 +76,7 @@ useEffect(() => {
       </div>
 
       <div className='checkout'>
-        <span className='title'>You added  ({cart.length}) items to cart</span>
+        <span className='title'> Added {cart.length} items to cart</span>
        
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: ₹ {total}</span>
         <button  disabled={cart.length === 0}>

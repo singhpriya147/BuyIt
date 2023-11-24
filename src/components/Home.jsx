@@ -1,36 +1,24 @@
 import React,{useContext} from 'react'
 import Carousel from './Carousel'
-// import Header from './Header'
-// import jasonData from  '../data/data.json'
+
 import { CartContext } from '../context/Context'
 import Product from './Product'
-import Filter from './Filter'
+
 import './style.css';
  
 const Home = () => {
   
-  const { state, dispatchCart } = useContext(CartContext);
+  const { state,dispatchCart} = useContext(CartContext);
   
   if (state.products.length === 0) {
-    return <div>Loading...</div>; // Or a loading indicator while data is being fetched
+    return <div>Loading...</div>; 
   }
 
 console.log(state.products); // object
 console.log(state.products.products);// array 
 
-// const filteredProducts = state.products.products.filter((product) => {
-//   // Check if the product's category matches the selected category
-//   const categoryMatch =
-//     state.selectedCategory === '' ||
-//     product.category === state.selectedCategory;
 
-//   // Check if the product's price is within the selected price range
-//   const priceInRange =
-//     product.price >= state.minPrice && product.price <= state.maxPrice;
 
-//   // Include the product in the filtered list if both conditions are met
-//   return categoryMatch && priceInRange;
-// });
  
 const handleMaxPriceChange = (e) => {
   dispatchCart({
@@ -38,15 +26,30 @@ const handleMaxPriceChange = (e) => {
     payload: parseInt(e.target.value, 10),
   });
 };
-    
-  const filteredProducts =
-    state.selectedCategory !== '' 
-      ? state.products.products.filter(
-          (product) => product.category === state.selectedCategory     && product.price <= state.maxPrice
-        )
-      : state.products.products
+    console.log(state.selectedCategory);
+  // const filteredProducts =
+  //   state.selectedCategory !== ''  
+  //     ? state.products.products.filter(
+  //         (product) =>
+  //           product.category ===
+  //           state.selectedCategory
+  //          && product.price <= state.maxPrice
+  //       )
+  //     : state.products.products;
 
-      console.log(filteredProducts);
+  //     console.log(filteredProducts);
+  const filteredProducts = state.products.products.filter((product) => {
+    // Check for category filter
+    const categoryFilter =
+      state.selectedCategory === '' ||
+      product.category === state.selectedCategory;
+
+    // Check for price filter
+    const priceFilter = product.price <= state.maxPrice;
+
+    // Return true if both category and price filters pass
+    return categoryFilter && priceFilter;
+  });
   return (
     <div className='home'>
       <Carousel />
@@ -61,7 +64,7 @@ const handleMaxPriceChange = (e) => {
             id='maxPrice'
             name='maxPrice'
             min='0'
-            max='1000'
+            max='5000'
             step='10'
             value={state.maxPrice}
             onChange={handleMaxPriceChange}
@@ -69,7 +72,7 @@ const handleMaxPriceChange = (e) => {
           />
         </div>
       </div>
-      <div className='productContainer'>
+      <div id='productContainer'>
         {filteredProducts
           ? filteredProducts.map((product) => {
               return <Product SingleProduct={product} key={product.id} />;
@@ -78,8 +81,7 @@ const handleMaxPriceChange = (e) => {
               <Product SingleProduct={product} key={product.id} />
             ))}
       </div>
-      <Filter />
-      <div></div>
+    
     </div>
   );
 }

@@ -18,7 +18,7 @@ const [state, dispatchCart] = useReducer(cartReducer, {
   selectedCategory: '',
 
 
-maxprice:5000,
+
 });
    useEffect (()=>{
     const fetchData=async()=>{
@@ -48,8 +48,7 @@ maxprice:5000,
 
 
   return (
-    // <CartContext.Provider value={{ jsonData}}>{children}
-    // </CartContext.Provider>
+   
     <CartContext.Provider value={{state,dispatchCart}} >{children}</CartContext.Provider>
   );
 }

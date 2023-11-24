@@ -1,5 +1,4 @@
-// Filter.js
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../context/Context';
 
 const Filter = () => {
@@ -10,18 +9,17 @@ const Filter = () => {
     dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: selectedCategory });
   };
 
-
   const handleMaxPriceChange = (e) => {
     dispatchCart({
       type: 'SET_MAX_PRICE',
       payload: parseInt(e.target.value, 10),
     });
   };
- 
+
   return (
     <div className='filter-container'>
       <h3>Filter by Category:</h3>
-      
+
       <div className='category-options'>
         <label className='larger-radio'>
           <input
@@ -168,7 +166,7 @@ const Filter = () => {
           womens-jewellery
         </label>
       </div>
-     
+
       {/* <div className='price-range'>
           <h3>Filter by Price Range:</h3>
        
