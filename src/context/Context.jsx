@@ -16,7 +16,7 @@ const [state, dispatchCart] = useReducer(cartReducer, {
   products: [],
   cart: [],
   selectedCategory: '',
-
+maxPrice:'5000'
 
 
 });
