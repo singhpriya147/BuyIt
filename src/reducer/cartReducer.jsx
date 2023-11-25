@@ -25,7 +25,7 @@ export const cartReducer = (state, action) => {
     case 'FETCH_SEARCH_RESULTS':
       return {
         ...state,
-        products: action.payload,
+        searchResults: action.payload,
       };
     case 'SET_MIN_PRICE':
       return { ...state, minPrice: action.payload };

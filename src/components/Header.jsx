@@ -15,9 +15,9 @@ const Header = () => {
 
 
    const {
-     state: { cart },
+     state: { cart,products ,searchResults},
      dispatchCart,
-    //  selectedCategory,
+    
    } = useContext(CartContext);
 
   // console.log(selectedCategory);
@@ -48,35 +48,42 @@ const Header = () => {
 
 
 const handleCategoryChange = (category) => {
-
-    const productContainerDiv = document.getElementById('productContainer');
-    if (productContainerDiv) {
-      productContainerDiv.scrollIntoView({ behavior: 'smooth' });
-    }
+   setSearchTerm('');
+   dispatchCart({ type: 'FETCH_SEARCH_RESULTS', payload: [] });
+  const productContainerDiv = document.getElementById('productContainer');
+  if (productContainerDiv) {
+    productContainerDiv.scrollIntoView({ behavior: 'smooth' });
+  }
   dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: category });
+  setSearchTerm('');
+// Clear the search term
+
   console.log(category);
 };
  
-  useEffect(() => {
+ 
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
           `https://dummyjson.com/products/search?q=${searchTerm}`
         );
         const data = await response.json();
-
+        console.log(data);
         dispatchCart({ type: 'FETCH_SEARCH_RESULTS', payload: data.products });
       } catch (error) {
         console.error('Error fetching search results:', error);
       }
     };
 
-    if (searchTerm.trim() !== '') {
-      fetchSearchResults();
-    }
-  }, [searchTerm, dispatchCart]);
+ 
+ const handleSearchButtonClick = () => {
 
-   
+    fetchSearchResults();
+     const productContainerDiv = document.getElementById('productContainer');
+     if (productContainerDiv) {
+       productContainerDiv.scrollIntoView({ behavior: 'smooth' });
+     }
+  };
    
   return (
     <div className='navbar'>
@@ -93,12 +100,12 @@ const handleCategoryChange = (category) => {
             placeholder='Search a product...'
             aria-label='Search'
             value={searchTerm}
-            onchange={(e) => setSearchTerm(() => e.target.value)}
+            onChange={(e) => setSearchTerm(() => e.target.value)}
           />
         </form>
       </div>
+      <button onClick={handleSearchButtonClick}>Search</button>
       <div className='categories-dropdown'>
-      
         <select
           id='category'
           // value={category}
