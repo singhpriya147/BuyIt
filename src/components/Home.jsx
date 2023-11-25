@@ -59,6 +59,9 @@ const handleMaxPriceChange = (e) => {
         <div className='product-container-header'>
           <h2>Explore Our Product</h2>
           <div className='price-range'>
+            <div className='price-range-tooltip'>
+             Please first select categories then set price Range
+            </div>
             <h3>Filter by Price Range:</h3>
 
             <label htmlFor='maxPrice'>Max: ${state.maxPrice}</label>

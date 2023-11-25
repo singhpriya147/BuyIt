@@ -20,9 +20,9 @@
   --accent: #D6CC99;
   --card: rgba(255, 255, 255, 0.03);
 }
-body{
+/* body{
   background-color: var(--background);
-}
+} */
 .header {
   display: flex;
   text-align: center;
@@ -178,6 +178,29 @@ h3{
 }
 
   /********** Range Input Styles **********/
+  .price-range {
+      position: relative;
+      display: inline-block;
+    }
+
+    .price-range-tooltip {
+      visibility: hidden;
+      position: absolute;
+      top: -30px;
+      left: 40%;
+      transform: translateX(-50%);
+      background-color: #e9d2d2;
+      color: #0e0d0d;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 15px;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+     .price-range:hover .price-range-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
 /*Range Reset*/
 input[type="range"] {
    -webkit-appearance: none;
@@ -289,14 +312,14 @@ gap:2rem
   justify-content: center;
   padding: 0.5rem;
 }
-.products  button,.product-detail button,.checkout button{
+.products  button,.product-detail button,.checkout button, .navbar button{
   background-color: var(--accent);
   padding: 0.5rem;
   border-radius:5rem;
   border-style: solid;
   border-width: 1.5px;
   border-color: #445D48;
- 
+ cursor: pointer; ;
 }
 /* .product-detail Button{
   background-color: var(--accent);
