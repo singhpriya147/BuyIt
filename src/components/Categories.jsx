@@ -2,7 +2,7 @@ import React ,{useContext} from 'react';
 import './style.css';
   import { CartContext } from '../context/Context';
 const Categories= () => {
-  // Your category data
+
   const categories = [
     { label: 'All Categories', value: '' },
     { label: 'Smartphones', value: 'smartphones' },
@@ -23,19 +23,18 @@ const Categories= () => {
 
 
  const {
-   state: { cart, products, searchResults },
+   
    dispatchCart,
  } = useContext(CartContext);
 const handleCategoryChange = (category) => {
-  // setSearchTerm('');
+ 
   dispatchCart({ type: 'FETCH_SEARCH_RESULTS', payload: [] });
   const productContainerDiv = document.getElementById('productContainer');
   if (productContainerDiv) {
     productContainerDiv.scrollIntoView({ behavior: 'smooth' });
   }
   dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: category });
-  // setSearchTerm('');
-  // Clear the search term
+
 
   console.log(category);
 };

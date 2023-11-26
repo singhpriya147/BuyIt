@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {Card} from "react-bootstrap"
-// import {Button} from 'react-bootstrap';
+
 import './style.css';
 import { CartContext } from '../context/Context';
 import { Link } from 'react-router-dom';
@@ -44,10 +44,10 @@ console.log(cart);
                 height: '30px',
                 borderRadius: '50%',
                 fontSize: '10px',
-                color: 'black', // Text color
+                color: 'black', 
                 fontWeight: 'bold',
                 padding: '1.2rem',
-              }} // Optional: Adjust font weight as needed}}
+              }} 
             >
               <span>{SingleProduct.discountPercentage}</span>
               <span>%off</span>

@@ -16,21 +16,21 @@
 }
 .carouselInner .left ,
 .carouselInner .right{
- background-color: transparent; /* Set the initial background color */
+ background-color: transparent;
   display: flex;
   align-items: center;
   color: var(--secondary);
   cursor: pointer;
   width: 50px;
-  height: 50px; /* Set a fixed height */
-  border-radius: 50%; /* Use border-radius to create a circle */
+  height: 50px; 
+  border-radius: 50%;
   justify-content: center;
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  transition: background-color 0.3s ease;
 }
 
 .carouselInner .left:hover ,
 .carouselInner .right:hover{
-  background-color: rgba(0, 0, 0, 0.43); /* Change the background color on hover */
+  background-color: rgba(0, 0, 0, 0.43);
 }
 
 .carouselInner .center {

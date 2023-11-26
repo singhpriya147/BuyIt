@@ -12,19 +12,11 @@ const Home = () => {
     state,
     dispatchCart,
   } = useContext(CartContext);
-  console.log(state.searchResults);
+
   
     if (!state.products.products || state.products.products.length === 0) {
       return <div>Loading...</div>;
     }
-
-  
-
-console.log(state.products); // object
-console.log(state.products.products);// array 
-
-
-
  
 const handleMaxPriceChange = (e) => {
   dispatchCart({
@@ -51,7 +43,7 @@ const handleMaxPriceChange = (e) => {
 
   
 
-  console.log(filteredProducts); //100
+  console.log(filteredProducts); 
   console.log(state.searchResults);   
     return (
       <div className='home'>

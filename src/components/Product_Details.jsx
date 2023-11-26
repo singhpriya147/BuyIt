@@ -83,7 +83,7 @@ const ProductDetails = () => {
         )}
       </Card>
 
-      {/* Render other product details as needed */}
+      
     </div>
   );
 };

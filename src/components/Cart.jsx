@@ -18,7 +18,7 @@ useEffect(() => {
       type: 'CHANGE_CART_QTY',
       payload: {
         id: prod.id,
-        qty: Math.max(prod.qty - 1, 1), // Ensure qty doesn't go below 1
+        qty: Math.max(prod.qty - 1, 1), 
       },
     });
   };

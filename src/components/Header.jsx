@@ -11,8 +11,6 @@ import { CiShoppingCart } from 'react-icons/ci';
 import { PiGithubLogoLight } from 'react-icons/pi';
 const Header = () => {
  const [searchTerm, setSearchTerm] = useState('');
- 
-
 
    const {
      state: { cart },
@@ -20,27 +18,6 @@ const Header = () => {
     
    } = useContext(CartContext);
 
-
- 
- 
-
-
-
-// const handleCategoryChange = (category) => {
-//    setSearchTerm('');
-//    dispatchCart({ type: 'FETCH_SEARCH_RESULTS', payload: [] });
-//   const productContainerDiv = document.getElementById('productContainer');
-//   if (productContainerDiv) {
-//     productContainerDiv.scrollIntoView({ behavior: 'smooth' });
-//   }
-//   dispatchCart({ type: 'SET_SELECTED_CATEGORY', payload: category });
-//   setSearchTerm('');
-// // Clear the search term
-
-//   console.log(category);
-// };
- 
- 
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
@@ -83,10 +60,6 @@ const Header = () => {
         </form>
         <CiSearch onClick={handleSearchButtonClick} />
       </div>
-
-      
-
-      {/* Custom dropdown - Show only on small screens */}
 
       <div className='theme-n-cart'>
       
