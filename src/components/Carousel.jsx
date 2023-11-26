@@ -5,7 +5,7 @@ import {images} from '../assets/images/carouselData'
 import './Carousel.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
-const Carousel = () => {
+const Carousel = ({autoSlide=false,autoSlideInterval=3000}) => {
   const [currImg, setCurrImg] = useState(0);
 
   useEffect(() => {
@@ -16,11 +16,23 @@ const Carousel = () => {
     return () => clearInterval(intervalId); // Cleanup the interval on component unmount
   }, []);
 
+// useEffect(()=>{
+// if(!autoSlide)return 
+// const slideInterval(setInterval() => {
+  
+// }, interval);
+// },[])
   return (
     <div className='carousel'>
       <div
         className='carouselInner'
-        style={{ backgroundImage: `url(${images[currImg].img})` , transition: 'background-image 3s ease-in-out',}}
+        style={{
+          backgroundImage: `url(${images[currImg].img})`,
+          // transition: 'background-image 3s ease-in-out',
+           transition: 'background-image 3s ease-in-out, opacity 1s ease-in-out, transform 0.5s ease-in-out'
+          // transform:`translate(-${currImg*100}%)`
+        }}
+        
       >
         <div
           className='left'

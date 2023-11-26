@@ -1,6 +1,6 @@
-import React,{useContext,useEffect} from 'react'
+import React,{useContext} from 'react'
 import Carousel from './Carousel'
-
+import Categories from './Categories'
 import { CartContext } from '../context/Context'
 import Product from './Product'
 
@@ -55,12 +55,13 @@ const handleMaxPriceChange = (e) => {
   console.log(state.searchResults);   
     return (
       <div className='home'>
+        <Categories />
         <Carousel />
         <div className='product-container-header'>
           <h2>Explore Our Product</h2>
           <div className='price-range'>
             <div className='price-range-tooltip'>
-             Please first select categories then set price Range
+              Please first select categories then set price Range
             </div>
             <h3>Filter by Price Range:</h3>
 
