@@ -5,7 +5,7 @@ import {images} from '../assets/images/carouselData'
 import './Carousel.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
-const Carousel = ({autoSlide=false,autoSlideInterval=3000}) => {
+const Carousel = () => {
   const [currImg, setCurrImg] = useState(0);
 
   useEffect(() => {
