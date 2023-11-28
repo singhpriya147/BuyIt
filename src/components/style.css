@@ -30,7 +30,7 @@
   --background:#001524 ;
   --primary: #001524;
   --secondary: #445D48;
-  --accent: #D6CC99;
+  --accent:#445D48;
   --card: rgba(255, 255, 255, 0.03);
 }
 
@@ -340,7 +340,9 @@ gap:2rem
   border-style: solid;
   border-width: 1.5px;
   border-color: #445D48;
- cursor: pointer; ;
+ cursor: pointer; 
+ color:var(--text)
+
 }
 
 .summary {
