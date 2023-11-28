@@ -67,8 +67,8 @@ const Header = () => {
         <ThemeToggle />
         <Link to='/Cart'>
           <div style={{display:"flex",alignItems:"center"}}>
-            <CiShoppingCart style={{ 'font-size': '25px' }}></CiShoppingCart>
-            <div class='badge'>{cart.length}</div>
+            <CiShoppingCart style={{ fontSize: '25px' }}></CiShoppingCart>
+            <div >{cart.length}</div>
           </div>
         </Link>
         <PiGithubLogoLight style={{ fontSize: '25px' }} />

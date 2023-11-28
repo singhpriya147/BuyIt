@@ -11,7 +11,16 @@ const Cart = () => {
 const [total, setTotal] = useState();
 
 useEffect(() => {
-  setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0));
+  setTotal(
+    cart.reduce(
+      (acc, curr) =>
+        acc +
+        (Number(curr.price) -
+          (Number(curr.discountPercentage) / 100) * Number(curr.price)) *
+          curr.qty,
+      0
+    ).toFixed(2)
+  );
 }, [cart]);
   const handleDecrease = (prod) => {
     dispatchCart({

@@ -48,12 +48,31 @@ const ProductDetails = () => {
     <div className='product-detail'>
       <Card>
         <Card.Img
-          src={product.images[0]}
+          src={product.thumbnail}
           alt={product.title}
           style={{ width: '200px', height: '200px' }}
         />
         <h3>{product.price}$</h3>
         <Card.Title>{product.title}</Card.Title>
+        <Card.Subtitle
+          style={{
+            backgroundColor: 'orange',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            width: '30px',
+            height: '30px',
+            borderRadius: '50%',
+            fontSize: '10px',
+            color: 'black',
+            fontWeight: 'bold',
+            padding: '1.2rem',
+          }}
+        >
+          <span>{product.discountPercentage}</span>
+          <span>%off</span>
+        </Card.Subtitle>
         <Card.Subtitle>{product.description}</Card.Subtitle>
         <Card.Subtitle>Rating: {product.rating}</Card.Subtitle>
         {cart.some((p) => p.id === product.id) ? (
@@ -82,8 +101,6 @@ const ProductDetails = () => {
           </button>
         )}
       </Card>
-
-      
     </div>
   );
 };

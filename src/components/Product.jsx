@@ -28,7 +28,7 @@ console.log(cart);
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
-              margin: '1.5rem,',
+              margin: '1.5rem',
            
             }}
           >
