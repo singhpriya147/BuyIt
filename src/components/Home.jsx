@@ -3,7 +3,7 @@ import Carousel from './Carousel'
 import Categories from './Categories'
 import { CartContext } from '../context/Context'
 import Product from './Product'
-
+import { SpinningCircles } from 'react-loading-icons';
 import './style.css';
  
 const Home = () => {
@@ -15,7 +15,11 @@ const Home = () => {
 
   
     if (!state.products.products || state.products.products.length === 0) {
-      return <div>Loading...</div>;
+      return (
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+          <SpinningCircles fill='black' />
+        </div>
+      );
     }
  
 const handleMaxPriceChange = (e) => {
