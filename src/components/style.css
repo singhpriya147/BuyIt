@@ -136,7 +136,7 @@ font-size :var(--text-2xl);
   display: flex;
   justify-content: flex-end;
   /* width: 20%; */
-  gap: 0.5rem;
+  padding: 0.8rem;
   color:var(--text);
 };
 
