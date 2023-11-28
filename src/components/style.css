@@ -256,11 +256,11 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; 
    appearance: none;
-   margin-top: -5px; /* Centers thumb on the track */
+   margin-top: -5px; 
 
-   /*custom styles*/
+  
    background-color:  rgb(161, 156, 156);;
    height: 1rem;
    width: 1rem;
@@ -280,10 +280,8 @@ input[type="range"]::-moz-range-track {
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-   border: none; /*Removes extra border that FF applies*/
-   border-radius: 100%; /*Removes default border-radius that FF applies*/
-
-   /*custom styles*/
+   border: none; 
+   border-radius: 100%; 
    background-color: rgb(161, 156, 156);
    height: 1rem;
    width: 1rem;
