@@ -56,20 +56,20 @@ const Header = () => {
             aria-label='Search'
             value={searchTerm}
             onChange={(e) => setSearchTerm(() => e.target.value)}
+            style={{ color: '#445D48' }}
           />
         </form>
-        <CiSearch onClick={handleSearchButtonClick} />
+
+        <CiSearch className='search-icon' onClick={handleSearchButtonClick} />
       </div>
 
       <div className='theme-n-cart'>
-      
         <ThemeToggle />
         <Link to='/Cart'>
-          <CiShoppingCart
-            color='black'
-            style={{ 'font-size': '25px' }}
-          ></CiShoppingCart>
-          <span class='badge'>{cart.length}</span>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <CiShoppingCart style={{ 'font-size': '25px' }}></CiShoppingCart>
+            <div class='badge'>{cart.length}</div>
+          </div>
         </Link>
         <PiGithubLogoLight style={{ fontSize: '25px' }} />
       </div>
