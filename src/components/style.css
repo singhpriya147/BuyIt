@@ -189,7 +189,7 @@
 
 
  .product-container-header{
-  width: 80%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -197,16 +197,20 @@
   /* background-color: red; */
   padding-top: 1rem;
   color: var(--text);
-    font-size: var(--text-4xl);
+ 
  }
 h2{
-  font-size: 30px;
+     font-size: var(--text-xl);
   font-weight: lighter;
 }
 h3{
-  font-size: 20px;
+     font-size: var(--text-lg);
   font-weight: lighter;
 }
+
+
+
+
 
   /********** Range Input Styles **********/
   .price-range {
@@ -218,7 +222,7 @@ h3{
       visibility: hidden;
       position: absolute;
       top: -30px;
-      left: 40%;
+      left: 50%;
       transform: translateX(-50%);
       background-color: #e9d2d2;
       color: #0e0d0d;
@@ -238,7 +242,8 @@ input[type="range"] {
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 15rem;
+    max-width: 8rem;
+      width: 50%;
 }
 
 /* Removes default focus */
@@ -360,12 +365,12 @@ gap:2rem
 }
 label{
   
-  height: 50px;
+  height: 25px;
   display: inline;
   width: 400px;
  
-  padding-left: 5rem;
-  font-size: 20px;
+  /* padding-left: 5rem; */
+  font-size: var(--text-l);
 }
 
 
@@ -424,21 +429,93 @@ padding: 2rem;
 }
 
 
-.carousel{
-  width:100%;
-  height:400px;
+.carousel {
+  width: 100%;
+  /* max-width: 1000px;  */
+  height: 400px;
+  background-color: black;
+  margin: 0 auto; /* Center the carousel on the page */
+}
 
-    display: flex;
+.carouselInner {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
   justify-content: center;
-  
+  align-items: center;
+}
 
+.carouselInner .left,
+.carouselInner .right {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
-.carousel-items{
-background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          display: flex;
+
+.carouselInner .left:hover,
+.carouselInner .right:hover {
+  background-color: rgba(0, 0, 0, 0.43);
 }
+
+.carouselInner .center {
+  flex: 80%;
+  height: 100%;
+  display: flex;
+  align-items:flex-start;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:left; /* Center text horizontally */
+  padding: 2rem; /* Adjust padding as needed for smaller screens */
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  padding-top: 3rem; /* Adjust padding as needed for smaller screens */
+}
+
+.center p {
+  font-size: var(--text-lg); /* Adjust font size for smaller screens */
+  padding-top: 3rem; /* Adjust padding as needed for smaller screens */
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .carousel {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .carouselInner .center {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  h1 {
+    font-size: var(--text-xl); 
+    padding-top: 4rem; 
+  }
+
+  .center p {
+    font-size: var(--text-sm);
+    padding-top: 0.5rem; 
+  }
+  .carouselInner .left,
+.carouselInner .right {
+  height: 25px;
+  width:25px;
+}
+}
+
 
 
 
@@ -501,18 +578,61 @@ background-size: cover;
     font-size: 18px !important;
   }
 
-  .productContainer {
-    width: 58%;
+  /* .productContainer {
+    width: 100%;
     padding: 0;
-  }
+  } */
 
  
 
-  .products {
+  /* .products {
     width: 100%;
-  }
+  } */
    /* .search-form input{
 display:hide;
   } */
   
+}
+
+@media (max-width: 771px) {
+  .product-container-header{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content:space-between;
+  /* background-color: red; */
+  padding: 1rem;
+  
+  color: var(--text);
+ 
+ }
+h2{
+     font-size: var(--text-l);
+  font-weight: lighter;
+}
+h3{
+     font-size: var(--text-sm);
+  font-weight: lighter;
+}
+}
+
+.product-container-header{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content:space-between;
+  /* background-color: red; */
+  padding-top: 1rem;
+  color: var(--text);
+ 
+ }
+h2{
+     font-size: var(--text-xl);
+  font-weight: lighter;
+}
+h3{
+     font-size: var(--text-lg);
+  font-weight: lighter;
 }

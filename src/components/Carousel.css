@@ -1,70 +1,81 @@
 .carousel {
-    width: 100wh;
-    height: 400px;
-    background-color: black;
+  width: 100%;
+  /* max-width: 1000px;  */
+  height: 400px;
+  background-color: black;
+  margin: 0 auto; /* Center the carousel on the page */
 }
 
 .carouselInner {
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-items: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.carouselInner .left ,
-.carouselInner .right{
- background-color: transparent;
+
+.carouselInner .left,
+.carouselInner .right {
+  background-color: transparent;
   display: flex;
   align-items: center;
   color: var(--secondary);
   cursor: pointer;
   width: 50px;
-  height: 50px; 
+  height: 50px;
   border-radius: 50%;
   justify-content: center;
   transition: background-color 0.3s ease;
 }
 
-.carouselInner .left:hover ,
-.carouselInner .right:hover{
+.carouselInner .left:hover,
+.carouselInner .right:hover {
   background-color: rgba(0, 0, 0, 0.43);
 }
 
 .carouselInner .center {
-    flex: 80%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
-    text-align-last: center;
-    padding: 4rem;
+  flex: 80%;
+  height: 100%;
+  display: flex;
+  align-items:flex-start;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:left; /* Center text horizontally */
+  padding: 2rem; /* Adjust padding as needed for smaller screens */
 }
 
 h1 {
-    font-size: 3rem;
-    padding-top: 4rem;
+  font-size: 3rem;
+  padding-top: 2rem; /* Adjust padding as needed for smaller screens */
 }
 
 .center p {
-    font-size: 2rem;
-    padding-top: 2rem;
-    font-weight:lighter;
-   font-style:normal;
+  font-size: 1.5rem; /* Adjust font size for smaller screens */
+  padding-top: 1rem; /* Adjust padding as needed for smaller screens */
+  font-weight: lighter;
+  font-style: normal;
 }
 
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .carousel {
+    height: 200px; /* Adjust height for smaller screens */
+  }
 
+  .carouselInner .center {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
 
-/* .carouselInner .right {
-    flex: 5%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.6);
-    display: grid;
-    place-items: center;
-    color: white;
-    cursor: pointer;
-} */
+  h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    padding-top: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .center p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding-top: 0.5rem; /* Adjust padding for smaller screens */
+  }
+}
