@@ -195,8 +195,8 @@ font-size :var(--text-2xl);
   margin-left: auto;
   display: flex;
   justify-content:space-between;
-  /* background-color: red; */
-  padding-top: 1rem;
+  
+  padding: 1rem;
   color: var(--text);
  
  }
