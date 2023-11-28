@@ -1,19 +1,26 @@
 import { createContext, useEffect, useMemo, useState } from 'react';
 
 
-const storageKey = 'theme';
 
-export const ThemeContext = createContext();
+
+
+
+export const ThemeContext = createContext(null);
+ThemeContext.displayName = 'ThemeContext';
+const storageKey = 'theme';
 
 
 export function ThemeProvider({ children }) {
  
+//  const prefersDarkMode = window.matchMedia(
+//    '(prefers-color-scheme: dark)'
+//  ).matches;
 
 
   const [theme, setTheme] = useState(() => {
-    
+    // Use localStorage value if available, otherwise use prefersDarkMode
     const storedTheme = localStorage.getItem(storageKey);
-    return storedTheme ;
+    return storedTheme || "light";
   });
 
   

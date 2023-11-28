@@ -1,15 +1,14 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import './App.css';
+import './components/style.css';
 import Header from './components/Header';
 import Cart from './components/Cart'
 import Home from './components/Home'
-  import Carousel from './components/Carousel';
+ 
 import PrdouctDetail from './components/Product_Details'
 function App() {
   return (
     <BrowserRouter>
       <Header />
-   
       <div className='app'>
         <Routes>
           <Route path='/' exact element={<Home />}></Route>
