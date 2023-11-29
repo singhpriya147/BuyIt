@@ -58,3 +58,25 @@ This section provides instructions on how to use BuyIt project on your local mac
 
 ![Screenshot (874)](https://github.com/singhpriya147/BuyIt/assets/72970648/b49adcc6-a9e0-4d8d-a86e-2e13de57283e)
 
+## Running the project
+### Installation
+
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/singhpriya147/BuyIt.git
+ 
+    ```
+
+2. **Install Dependencies:**
+    ```bash
+    npm install
+
+### Quick Start
+Follow these steps to quickly start the project:
+1. **Run the Application:**
+    ```bash
+    npm start
+    ```
+
+2. **Access the Application:**
+   Open your web browser and go to `http://localhost:3000` to access the BuyIt web app.
