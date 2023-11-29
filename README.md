@@ -42,3 +42,10 @@ This section provides instructions on how to use BuyIt project on your local mac
   - Personalize your viewing experience by toggling between light and dark modes, enhancing readability and reducing eye strain.
 - **Set Price limit for products:**
   - set a maximum price after selecting categories to find relevant product instantly.
+
+## Screenshots
+1- **Landing page**
+
+![Screenshot (867)](https://github.com/singhpriya147/BuyIt/assets/72970648/bff30953-b9cd-41d6-a343-5f084b99c9ed)
+![Screenshot (868)](https://github.com/singhpriya147/BuyIt/assets/72970648/d97b682f-7e2c-4bd0-8204-a1c07235f7d7)
+![Screenshot (869)](https://github.com/singhpriya147/BuyIt/assets/72970648/8e55e9e7-e264-43ca-bf89-9f6010a474d4)
