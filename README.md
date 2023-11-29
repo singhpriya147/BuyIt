@@ -48,4 +48,13 @@ This section provides instructions on how to use BuyIt project on your local mac
 
 ![Screenshot (867)](https://github.com/singhpriya147/BuyIt/assets/72970648/bff30953-b9cd-41d6-a343-5f084b99c9ed)
 ![Screenshot (868)](https://github.com/singhpriya147/BuyIt/assets/72970648/d97b682f-7e2c-4bd0-8204-a1c07235f7d7)
-![Screenshot (869)](https://github.com/singhpriya147/BuyIt/assets/72970648/8e55e9e7-e264-43ca-bf89-9f6010a474d4)
+![Screenshot (876)](https://github.com/singhpriya147/BuyIt/assets/72970648/45f336b5-9c9d-4c3e-b202-0396709340e7)
+
+2- **Product description page**
+
+![Screenshot (872)](https://github.com/singhpriya147/BuyIt/assets/72970648/ecf70e57-843c-4dd1-9c5c-90fb33d08c9b)
+
+3- **Cart page**
+
+![Screenshot (874)](https://github.com/singhpriya147/BuyIt/assets/72970648/b49adcc6-a9e0-4d8d-a86e-2e13de57283e)
+
