@@ -26,6 +26,7 @@ BuyIT Shopping App is a frontend web application built using React, CSS Bootstra
 - 💸 **Price Range**: Filter products based on your budget with a convenient price range feature.
 - 🌓 **Dark/Light Mode**: Switch between dark and light modes for a personalized and comfortable viewing experience.
 - 🛍️ Browse and explore a diverse categories of products.
+  
 ## Usage
 This section provides instructions on how to use BuyIt project on your local machine.
 
